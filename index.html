@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Train Scheduler</title>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="text-center">Come on, it's the CHOO CHOO TRAIN</h1>
+        </div>
+    </div>
+    <header>
+        <strong>Current Train Schedule</strong>
+    </header>
+    <aside>
+        <strong>Add Train</strong>
+    </aside>
+    <div id="articles">
+    </div>
+    <section>
+        <form>
+            <div class="form-group">
+                <label for="train-name">Train Name </label>
+                <input type="text" class="form-control" id="add-train" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="train-destination">Destination </label>
+                <input type="text" class="form-control" id="train-destination" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="train-time">First Train Time (HH:mm - military time) </label>
+                <input type="text" class="form-control" id="train-time" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="train-frequency">Frequency (min) </label>
+                <input type="text" class="form-control" id="train-frequency" placeholder="">
+            </div>
+            <button id="search-button" type="button" class="btn btn-md"><span></span>Submit</button>
+        </form>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/javascript.js"></script>
+</body>
+
+</html>
