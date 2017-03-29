@@ -4,45 +4,70 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <title>Train Scheduler</title>
 </head>
 
 <body>
-    <div class="jumbotron">
-        <div class="container">
-            <h1 class="text-center">Come on, it's the CHOO CHOO TRAIN</h1>
+    <div class="jumbotron container">
+        <div class="row text-center">
+            <h1 class="col-xs-12">Train Scheduler</h1>
+            <h3 class="col-xs-12">A Directory of Trains</h3>
         </div>
     </div>
-    <header>
-        <strong>Current Train Schedule</strong>
-    </header>
-    <aside>
-        <strong>Add Train</strong>
-    </aside>
-    <div id="articles">
-    </div>
-    <section>
-        <form>
-            <div class="form-group">
+    <section id="articles" class="container">
+        <header class="row">
+            <h2 class="col-xs-12">Current Train Schedule</h2>
+        </header>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                </tr>
+            </thead>
+            <tbody id="train-table">
+                <tr>
+                    <td>Richard Smalls</td>
+                    <td>Beverly Hills</td>
+                    <td>45</td>
+                    <td>10</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="container">
+        <header class="row">
+            <h2 class="col-xs-12">Add Train</h2>
+        </header>
+        <form class="row ">
+            <div id="name-text" class="form-group col-xs-12">
                 <label for="train-name">Train Name </label>
-                <input type="text" class="form-control" id="add-train" placeholder="">
+                <input type="text" class="form-control" id="name" placeholder="">
             </div>
-            <div class="form-group">
+            <div class="form-group col-xs-12">
                 <label for="train-destination">Destination </label>
-                <input type="text" class="form-control" id="train-destination" placeholder="">
+                <input type="text" class="form-control" id="destination" placeholder="">
             </div>
-            <div class="form-group">
+            <div class="form-group col-xs-12">
                 <label for="train-time">First Train Time (HH:mm - military time) </label>
                 <input type="text" class="form-control" id="train-time" placeholder="">
             </div>
-            <div class="form-group">
-                <label for="train-frequency">Frequency (min) </label>
-                <input type="text" class="form-control" id="train-frequency" placeholder="">
+            <div class="form-group col-xs-12">
+                <label for="train-frequency">Frequency </label>
+                <input type="text" class="form-control" id="frequency" placeholder="">
             </div>
-            <button id="search-button" type="button" class="btn btn-md"><span></span>Submit</button>
+            <div class="col-xs-12">
+                <button id="submit-button" type="button" class="btn btn-md"><span></span>Submit</button>
+            </div>
         </form>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
     <script type="text/javascript" src="assets/javascript/javascript.js"></script>
 </body>
 
